@@ -1,0 +1,28 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    height: 5%;
+}
+
+.searchBar-searchIcon {
+    color: white;
+    cursor: pointer;
+}
+
+.searchBar > input {
+    height: 80%;
+    border: none;
+    background: none;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 5px;
+}
+
+.searchBar > input::placeholder {
+    color: white;
+}
