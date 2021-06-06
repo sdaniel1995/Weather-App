@@ -1,33 +1,44 @@
-import React, { useState } from 'react';
+import  { useState, useEffect } from 'react';
+import { getWeather } from '../services/actions/GetWeather';
 import SearchIcon from '@material-ui/icons/Search';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import '../css/Header.css';
 
 const Header = () => {
-    const [city, setCity] = useState<string>();
-    const api = "http://api.openweathermap.org/data/2.5/weather?appid=af5bb8137fc355729a0a65a1f7a87d12&q=";
+    const [city, setCity] = useState<string>('');
+    const dispatch = useDispatch();
+    let lattitude: string = "";
+    let longitude: string = "";
 
-    function getWeather() {
-        axios.get(api + city)
-        .then(resp => {
-            console.log(resp);
-        })
-        .catch (error => {
-            console.log(error);
-        });
+
+    (async () => {
+        const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Lexington&appid=af5bb8137fc355729a0a65a1f7a87d12");
+        lattitude = coordinates.data.coord.lat;
+        longitude = coordinates.data.coord.lon;
+        const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
+        dispatch(getWeather(weather.data));
+    })();
+
+    async function getWeatherData() {
+        const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=af5bb8137fc355729a0a65a1f7a87d12");
+        lattitude = coordinates.data.coord.lat;
+        longitude = coordinates.data.coord.lon;
+        const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
+        dispatch(getWeather(weather.data));
     }
 
     function search (event: any) {
         if (event.key === 'Enter') {
-            getWeather();
+           getWeatherData();
         }
     }
 
     return (
         <div className='header'>
             <div className="searchBar">
-                <SearchIcon className="searchBar-searchIcon" onClick={getWeather}/>
                 <input type="text" placeholder="Search City" id="search" onChange={event => setCity(event.target.value)} onKeyPress={search}/>
+                <SearchIcon className="searchBar-searchIcon" onClick={getWeatherData}/>
             </div>
         </div>
     );

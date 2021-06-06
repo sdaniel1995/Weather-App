@@ -1,13 +1,15 @@
 import React from 'react';
-import Header from './components/Header'
+import Header from './components/Header';
+import Forecast from './components/Forecast';
 import './css/App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       <Header/>
+      <Forecast/>
     </div>
   );
-}
+};
 
 export default App;

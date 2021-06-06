@@ -4,8 +4,8 @@ body {
 }
 
 .app {
-  display: flex;
-  justify-content: center;
+  display: block;
+  text-align: center;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(#183090, #000078, #000030)
