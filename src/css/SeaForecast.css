@@ -1,0 +1,10 @@
+.seaForecast {
+   background: var(--background);
+   border-radius: var(--border-radius);
+   margin: var(--margin);
+   width: var(--width);
+   height: var(--height);
+   color: white;
+   padding: var(--padding); 
+}
+

@@ -5,7 +5,7 @@
     width: var(--width);
     height: var(--height);
     color: white;
-    padding: var(--padding);
+    padding: var(--padding); 
 }
 
 .localForecast-title {

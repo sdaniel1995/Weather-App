@@ -1,14 +1,15 @@
 import * as WeatherIcons from 'weather-icons-react';
 import '../css/LocalForecast.css';
 
-const LocalForecast = (props:any) => {
-    function convertToFarenheit() {
-        return(((props.data.current.temp - 273.15) * (9/5) + 32).toFixed(2));
-    }
+export function convertToFarenheit(input: number) {
+    return(((input - 273.15) * (9/5) + 32).toFixed(2));
+}
 
-    function convertToCelsius() {
-        return((props.data.current.temp - 273.15).toFixed(2));
-    }
+export function convertToCelsius(input: number) {
+    return((input - 273.15).toFixed(2));
+}
+
+const LocalForecast = (props:any) => {
 
     function getDay() {
         const date = new Date();
@@ -28,11 +29,11 @@ const LocalForecast = (props:any) => {
             </div>
             <div className="localForecast-footer">
                 <span> 
-                    {convertToFarenheit()}
+                    {convertToFarenheit(props.data.current.temp)}
                     <WeatherIcons.WiFahrenheit size={30}/>
                 </span>
                 <span>
-                    {convertToCelsius()}
+                    {convertToCelsius(props.data.current.temp)}
                     <WeatherIcons.WiCelsius size={30}/>
                 </span>
             </div>

@@ -32,6 +32,7 @@
     font-size: 16px;
     border-radius: 10px;
     color: white;
+    outline: none;
 }
 
 .searchBar > input::placeholder {

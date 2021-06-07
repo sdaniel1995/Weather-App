@@ -1,7 +1,9 @@
-const SeaForecast = () => {
+import '../css/SeaForecast.css';
+
+const SeaForecast = (props: any) => {
     return (
-        <div>
-            
+        <div className="seaForecast">
+            {props.title}
         </div>
     )
 }
