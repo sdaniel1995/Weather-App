@@ -17,7 +17,7 @@ const LocalForecast = (props:any) => {
     }
 
     return (
-        <div>
+        <div className="localForecast">
             <div className="localForecast-title">{props.title}</div>
             <div className="localForecast-main">
                 <div><WeatherIcons.WiDayShowers size={100}/></div>

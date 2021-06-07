@@ -1,9 +1,9 @@
-import React from 'react';
+import '../css/WeeklyForecast.css';
 
-const WeeklyForecast = () => {
+const WeeklyForecast = (props: any) => {
     return (
-        <div>
-            WeekForeCast
+        <div className="weeklyForecast">
+           {props.title}
         </div>
     )
 }

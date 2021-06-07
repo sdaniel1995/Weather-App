@@ -1,0 +1,8 @@
+.weeklyForecast {
+    background: var(--background);
+    border-radius: var(--border-radius);
+    margin: 100px auto 0 auto;
+    color: white;
+    width: 80%;
+    height: 30%;
+}
