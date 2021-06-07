@@ -1,9 +1,9 @@
 import React from 'react';
 
-const WeeklyForecast = ({name}) => {
+const WeeklyForecast = () => {
     return (
         <div>
-            {name}
+            WeekForeCast
         </div>
     )
 }
