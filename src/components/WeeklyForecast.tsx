@@ -6,7 +6,7 @@ const WeeklyForecast = (props: any) => {
         <div className="weeklyForecast">
            {props.title}
         </div>
-    )
-}
+    );
+};
 
 export default WeeklyForecast;

@@ -21,7 +21,6 @@ const Forecast = () => {
         "Saturday"
     ];
 
-    console.log(weatherData);
     return (
         <div className="forecast">
             <div className="sea-daily-report">
@@ -30,7 +29,7 @@ const Forecast = () => {
             </div>
             {weatherData == null ? "": <WeeklyForecast title="Local Weekly Weather Report" data={weatherData} days={weekDays}/>}
         </div>
-    )
-}
+    );
+};
 
-export default Forecast
+export default Forecast;

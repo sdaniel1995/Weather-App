@@ -38,7 +38,7 @@ const LocalForecast = (props:any) => {
                 </span>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default LocalForecast
+export default LocalForecast;
