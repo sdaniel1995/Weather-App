@@ -11,6 +11,8 @@ const Forecast = () => {
         return state.weatherData;
     }); 
 
+    console.log(weatherData);
+
     const weekDays: Array<string> = [
         "Sunday", 
         "Monday",
@@ -24,10 +26,10 @@ const Forecast = () => {
     return (
         <div className="forecast">
             <div className="sea-daily-report">
-                {weatherData == null ? "": <LocalForecast title="Local Daily Weather Report" data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
-                {weatherData == null ? "": <SeaForecast title= "Local Sea Forecast Report" data={weatherData} />}
+                {weatherData && <LocalForecast title="Local Daily Weather Report" data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
+                {weatherData && <SeaForecast title= "Local Sea Forecast Report" data={weatherData} />}
             </div>
-            {weatherData == null ? "": <WeeklyForecast data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
+            {weatherData && <WeeklyForecast data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
         </div>
     );
 };

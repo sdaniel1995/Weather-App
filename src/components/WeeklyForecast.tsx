@@ -1,7 +1,7 @@
 import '../css/WeeklyForecast.css';
 import Days from './Days';
 
-const WeeklyForecast = (props: any) => {
+const WeeklyForecast = ({title, data, days, icon}: any) => {
 
     return (
         <div className="weeklyForecast">

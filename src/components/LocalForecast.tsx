@@ -9,31 +9,31 @@ export function convertToCelsius(input: number) {
     return((input - 273.15).toFixed(2));
 }
 
-const LocalForecast = (props:any) => {
+const LocalForecast = ({title, days, data, icon}:any) => {
 
     function getDay() {
         const date = new Date();
         const day = date.getDay();
-        return(props.days[day]);
+        return(days[day]);
     }
 
     return (
         <div className="localForecast">
-            <div className="localForecast-title">{props.title}</div>
+            <div className="localForecast-title">{title}</div>
             <div className="localForecast-main">
-                <div><img id="weatherIcon" src={props.icon} alt="Weather Icon"/></div>
+                <div><img id="weatherIcon" src={icon} alt="Weather Icon"/></div>
                 <div>
                     <h2>{getDay()}</h2>
-                    {props.data.current.weather[0].description}
+                    {data.current.weather[0].description}
                 </div>
             </div>
             <div className="localForecast-footer">
                 <span> 
-                    {convertToFarenheit(props.data.current.temp)}
+                    {convertToFarenheit(data.current.temp)}
                     <WeatherIcons.WiFahrenheit size={30}/>
                 </span>
                 <span>
-                    {convertToCelsius(props.data.current.temp)}
+                    {convertToCelsius(data.current.temp)}
                     <WeatherIcons.WiCelsius size={30}/>
                 </span>
             </div>

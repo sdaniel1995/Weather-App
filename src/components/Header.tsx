@@ -6,11 +6,10 @@ import axios from 'axios';
 import '../css/Header.css';
 
 const Header = () => {
-    const [city, setCity] = useState<string>('');
+    const [city, setCity] = useState<string>("");
     const dispatch = useDispatch();
     let lattitude: string = "";
     let longitude: string = "";
-
 
     useEffect(() => {getDefaultWeather()}, []);
 
