@@ -30,3 +30,7 @@
     flex-direction: column;
     float: right;
 }
+
+#weatherIcon {
+    height: 130px;
+}

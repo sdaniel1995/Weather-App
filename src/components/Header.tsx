@@ -12,13 +12,15 @@ const Header = () => {
     let longitude: string = "";
 
 
-    (async () => {
-        const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Lexington&appid=af5bb8137fc355729a0a65a1f7a87d12");
-        lattitude = coordinates.data.coord.lat;
-        longitude = coordinates.data.coord.lon;
-        const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
-        dispatch(getWeather(weather.data));
-    })();
+    useEffect(() => {getDefaultWeather()}, []);
+
+    async function getDefaultWeather() {
+            const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Lexington&appid=af5bb8137fc355729a0a65a1f7a87d12");
+            lattitude = coordinates.data.coord.lat;
+            longitude = coordinates.data.coord.lon;
+            const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
+            dispatch(getWeather(weather.data));
+    }
 
     async function getWeatherData() {
         const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=af5bb8137fc355729a0a65a1f7a87d12");

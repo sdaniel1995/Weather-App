@@ -21,7 +21,7 @@ const LocalForecast = (props:any) => {
         <div className="localForecast">
             <div className="localForecast-title">{props.title}</div>
             <div className="localForecast-main">
-                <div><WeatherIcons.WiDayShowers size={100}/></div>
+                <div><img id="weatherIcon" src={props.icon} alt="Weather Icon"/></div>
                 <div>
                     <h2>{getDay()}</h2>
                     {props.data.current.weather[0].description}

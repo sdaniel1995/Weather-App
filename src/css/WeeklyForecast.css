@@ -6,3 +6,9 @@
     width: 80%;
     height: 30%;
 }
+
+.weeklyForecast-main {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}

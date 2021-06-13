@@ -24,10 +24,10 @@ const Forecast = () => {
     return (
         <div className="forecast">
             <div className="sea-daily-report">
-                {weatherData == null ? "": <LocalForecast title="Local Daily Weather Report" data={weatherData} days={weekDays}/>}
+                {weatherData == null ? "": <LocalForecast title="Local Daily Weather Report" data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
                 {weatherData == null ? "": <SeaForecast title= "Local Sea Forecast Report" data={weatherData} />}
             </div>
-            {weatherData == null ? "": <WeeklyForecast title="Local Weekly Weather Report" data={weatherData} days={weekDays}/>}
+            {weatherData == null ? "": <WeeklyForecast data={weatherData} days={weekDays} icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}/>}
         </div>
     );
 };
