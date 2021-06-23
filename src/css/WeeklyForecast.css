@@ -5,10 +5,11 @@
     color: white;
     width: 80%;
     height: 30%;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .weeklyForecast-main {
-    display: flex;
+    display: inline-block;
     margin-top: 30px;
-    justify-content: space-evenly;
 }
