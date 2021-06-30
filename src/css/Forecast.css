@@ -1,9 +1,14 @@
-.forecast {
-    width: 100%;
-    height: 100%;
-}
-
-.sea-daily-report {
+.forecast{
     display: flex;
-    justify-content: space-evenly;
+    border: 2px solid red;
+    position: absolute;
+    align-items: center;
+    justify-content: space-around;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 60%;
+    width: 95%;
+    padding-left: 40px;
+    padding-right: 40px;
 }

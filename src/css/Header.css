@@ -23,10 +23,6 @@
     margin-left: 5px;
 }
 
-.searchBar-searchIcon:hover {
-    transform: scale(1.2, 1.2);
-}
-
 .searchBar > input {
     height: 80%;
     width: 85%;

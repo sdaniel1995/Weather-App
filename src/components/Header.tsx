@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import  { useState } from 'react';
 import { getWeather } from '../services/actions/GetWeather';
 import SearchIcon from '@material-ui/icons/Search';
 import { useDispatch } from 'react-redux';
@@ -11,15 +11,16 @@ const Header = () => {
     let lattitude: string = "";
     let longitude: string = "";
 
-    useEffect(() => {getDefaultWeather()}, []);
-
-    async function getDefaultWeather() {
+    //icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}
+    
+    (async() => {
             const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Lexington&appid=af5bb8137fc355729a0a65a1f7a87d12");
             lattitude = coordinates.data.coord.lat;
             longitude = coordinates.data.coord.lon;
             const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
+            console.log(weather.data);
             dispatch(getWeather(weather.data));
-    }
+    })();
 
     async function getWeatherData() {
         const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=af5bb8137fc355729a0a65a1f7a87d12");

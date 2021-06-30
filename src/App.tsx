@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
-import Forecast from './components/Forecast';
 import './css/App.css';
+import Forecast from './components/Forecast';
 
 const App = () => {
   return (

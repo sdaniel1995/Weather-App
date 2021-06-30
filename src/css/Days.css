@@ -1,8 +1,10 @@
 .days {
-    display: inline-block;
+    border: 2px solid blue;
+    border-radius: 20px;
+    width: 17%;
+    height: 60%;
 }
 
-.days-main {
-    display: flex;
-    flex-direction: column;
+.days:hover {
+    transform: scale(1.1, 1.1);
 }
