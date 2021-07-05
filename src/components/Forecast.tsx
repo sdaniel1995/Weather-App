@@ -9,13 +9,29 @@ const Forecast = () => {
         return state.weatherData;
     }); 
 
+    const days: Array<String> = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    function getDayName(currentDay: number) {
+        let i: number = 0;
+        if(currentDay > 6) {currentDay = (currentDay - 1) - 6;}
+        return days[i + currentDay];
+    }
+
     return (
         <div className='forecast'>
-            <Day day="Monday" weather={weatherData}/>
-            <Day day="Tuesday" weather={weatherData}/>
-            <Day day="Wednesday" weather={weatherData}/>
-            <Day day="Thursday" weather={weatherData}/>
-            <Day day="Friday" weather={weatherData} />
+            <Day day={getDayName(new Date().getDay())} weather={weatherData}/>
+            <Day day={getDayName(new Date().getDay() + 1)} weather={weatherData}/>
+            <Day day={getDayName(new Date().getDay() + 2)} weather={weatherData}/>
+            <Day day={getDayName(new Date().getDay() + 3)} weather={weatherData}/>
+            <Day day={getDayName(new Date().getDay() + 4)} weather={weatherData} />
         </div>
     );
 };

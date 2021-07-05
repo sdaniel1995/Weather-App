@@ -18,7 +18,6 @@ const Header = () => {
             lattitude = coordinates.data.coord.lat;
             longitude = coordinates.data.coord.lon;
             const weather = await axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly&appid=af5bb8137fc355729a0a65a1f7a87d12");
-            console.log(weather.data);
             dispatch(getWeather(weather.data));
     })();
 
