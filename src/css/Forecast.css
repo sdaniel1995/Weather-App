@@ -1,9 +1,8 @@
 .forecast{
     display: flex;
-    border: 2px solid red;
     align-items: center;
     justify-content: space-around;
-    height: 60%;
+    height: 85%;
     width: 95%;
     padding-left: 40px;
     padding-right: 40px;

@@ -10,8 +10,6 @@ const Header = () => {
     const dispatch = useDispatch();
     let lattitude: string = "";
     let longitude: string = "";
-
-    //icon={"http://openweathermap.org/img/wn/" + weatherData.current.weather[0].icon + ".png"}
     
     (async() => {
             const coordinates = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=Lexington&appid=af5bb8137fc355729a0a65a1f7a87d12");

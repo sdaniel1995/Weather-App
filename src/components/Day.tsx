@@ -1,4 +1,5 @@
-import React from 'react';
+import React  from 'react';
+import * as WiWeather from 'weather-icons-react';
 import '../css/Days.css';
 
 function convertToFarenheit(kelvinTemp: number) {
@@ -11,13 +12,13 @@ function convertToCelsius(kelvinTemp: number) {
 
 const Day = ({day, weather}: any) => {
     return (
-        <div className="days">
+        <div className="days" key={Math.random()}>
             <div className="dayName">{day}</div>
-            <div className="weatherIcon"></div>
+            <div className="weatherIcon"> <WiWeather.WiCloudy size={200}/></div>
             <div className="temp">
-                {weather && convertToFarenheit(weather.current.temp).toFixed(2)} Farenheit
+                {weather && convertToFarenheit(weather).toFixed(2)} <WiWeather.WiFahrenheit size={45}/>
                 <br/>
-                {weather && convertToCelsius(weather.current.temp).toFixed(2)} Celsius
+                {weather && convertToCelsius(weather).toFixed(2)}  <WiWeather.WiCelsius size={45}/>
             </div>
         </div>
     );
