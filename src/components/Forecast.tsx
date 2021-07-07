@@ -25,21 +25,17 @@ const Forecast = () => {
 
     function getDayName(currentDay: number) {
         let i: number = 0;
-        if(currentDay > 6) {currentDay = (currentDay - 1) - days.length;}
+        if(currentDay > 6) {currentDay = (currentDay - 1) - 6;}
         return days[i + currentDay];
-    }
-
-    function getWeatherStatus(weatherStatus: string) {
-        return "";
     }
 
     return (
         <div className='forecast'>
-            <Day day={getDayName(date.getDay())} weather={weatherData && weatherData.daily[0].temp.eve}/>
-            <Day day={getDayName(date.getDay() + 1)} weather={weatherData && weatherData.daily[1].temp.eve}/>
-            <Day day={getDayName(date.getDay() + 2)} weather={weatherData && weatherData.daily[2].temp.eve}/>
-            <Day day={getDayName(date.getDay() + 3)} weather={weatherData && weatherData.daily[3].temp.eve}/>
-            <Day day={getDayName(date.getDay() + 4)} weather={weatherData && weatherData.daily[4].temp.eve}/>
+            <Day day={getDayName(date.getDay())} weather={weatherData && weatherData.daily[0].temp.eve} weatherDescription={weatherData && weatherData.daily[0].weather.description}/>
+            <Day day={getDayName(date.getDay() + 1)} weather={weatherData && weatherData.daily[1].temp.eve} weatherDescription={weatherData && weatherData.daily[0].weather.description}/>
+            <Day day={getDayName(date.getDay() + 2)} weather={weatherData && weatherData.daily[2].temp.eve} weatherDescription={weatherData && weatherData.daily[0].weather.description}/>
+            <Day day={getDayName(date.getDay() + 3)} weather={weatherData && weatherData.daily[3].temp.eve} weatherDescription={weatherData && weatherData.daily[0].weather.description}/>
+            <Day day={getDayName(date.getDay() + 4)} weather={weatherData && weatherData.daily[4].temp.eve} weatherDescription={weatherData && weatherData.daily[0].weather.description}/>
         </div>
     );
 };

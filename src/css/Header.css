@@ -1,24 +1,25 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 10%;
+    height: 13%;
     width: 100%;
+    background: rgba(255, 230, 238, 1.0);
 }
 
 .searchBar {
     display: flex;
+    justify-content: center;
+    background: white;
     margin-left: auto;
     margin-right: auto;
-    background: var(--background);
     border-radius: var(--border-radius);
     padding: var(--padding);
-    height: 35%;
+    height: 25%;
     width: 20%;
 }
 
 .searchBar-searchIcon {
-    color: white;
+    color:black;
     cursor: pointer;
     margin-left: 5px;
 }
@@ -26,15 +27,27 @@
 .searchBar > input {
     height: 80%;
     width: 85%;
-    margin-left: 10px;
     border: none;
     background: none;
     font-size: 16px;
     border-radius: 10px;
-    color: white;
+    color:black;
     outline: none;
+    text-align: center;
 }
 
 .searchBar > input::placeholder {
-    color: white;
+    color: black;
+    text-align: center;
+    font-size: 18px;
+}
+
+.appLogo-appName {
+    display: flex;
+    align-items: center;
+}
+
+.appLogo {
+    width: 100px;
+    height: 100px;
 }

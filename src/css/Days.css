@@ -8,8 +8,8 @@
     width: 17%;
     height: 60%;
     color: white;
-    -webkit-box-shadow: -1px -1px 5px 5px rgba(255,255,255,0.45); 
-    box-shadow: -1px -1px 5px 5px rgba(255,255,255,0.45);
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000; 
 }
 
 .days:hover {

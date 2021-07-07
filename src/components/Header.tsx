@@ -1,9 +1,11 @@
 import  { useState } from 'react';
 import { getWeather } from '../services/actions/GetWeather';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from '@material-ui/icons/Menu';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import '../css/Header.css';
+import AppLogo from '../images/logo.png';
 
 const Header = () => {
     const [city, setCity] = useState<string>("");
@@ -35,10 +37,15 @@ const Header = () => {
 
     return (
         <div className='header'>
+            <div className="appLogo-appName">
+                <img className="appLogo" src={AppLogo} /> 
+                <h2>HD Weather</h2>
+            </div>
             <div className="searchBar">
                 <input type="text" placeholder="Search City" id="search" onChange={event => setCity(event.target.value)} onKeyPress={search}/>
                 <SearchIcon className="searchBar-searchIcon" onClick={getWeatherData}/>
             </div>
+            <div className="menu" style={{marginRight: "20px"}}><MenuIcon/></div>
         </div>
     );
 };
